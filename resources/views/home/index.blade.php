@@ -6,8 +6,8 @@
     <section id="homepage" class="mt-4">
         <div class="row">
             <div class="col-12 col-md-6 d-flex justify-content-start align-items-center">
-                <h1 class="heading title-one">Bringing Life 
-                    <span class="d-block title-two">To Your Space</span>
+                <h1 class="heading title-one">{{$title}}
+                    <span class="d-block title-two">{{$subtitle}}</span>
                 </h1>
             </div>
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">

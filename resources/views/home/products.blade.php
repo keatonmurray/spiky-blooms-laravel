@@ -20,8 +20,10 @@
             <div class="products col-12 col-md-3">
                 <div class="product-img-container text-center d-flex flex-column align-items-center"> 
                     <figure>
-                        <img src="{{asset('images/cactus1.jpg')}}" alt="Product Image" class="img-fluid">
-                    </figure>
+                        <a href="/product/1">
+                            <img src="{{asset('images/cactus1.jpg')}}" alt="Product Image" class="img-fluid">
+                        </a>
+                        </figure>
                     <p class="product-title">Corsage Cactus</p>
                     <h3 class="product-price">$12.50</h3>
                 </div>
@@ -29,8 +31,10 @@
             <div class="products col-12 col-md-3">
                 <div class="product-img-container text-center d-flex flex-column align-items-center"> 
                     <figure>
-                        <img src="{{asset('images/cactus1.jpg')}}" alt="Product Image">
-                    </figure>
+                        <a href="/product/1">
+                            <img src="{{asset('images/cactus1.jpg')}}" alt="Product Image">
+                        </a>
+                        </figure>
                     <p class="product-title">Corsage Cactus</p>
                     <h3 class="product-price">$12.50</h3>
                 </div>
@@ -38,8 +42,10 @@
             <div class="products col-12 col-md-3">
                 <div class="product-img-container text-center d-flex flex-column align-items-center"> 
                     <figure>
-                        <img src="{{asset('images/cactus1.jpg')}}" alt="Product Image">
-                    </figure>
+                        <a href="/product/1">
+                            <img src="{{asset('images/cactus1.jpg')}}" alt="Product Image">
+                        </a>
+                        </figure>
                     <p class="product-title">Corsage Cactus</p>
                     <h3 class="product-price">$12.50</h3>
                 </div>
@@ -47,8 +53,10 @@
             <div class="products col-12 col-md-3">
                 <div class="product-img-container text-center d-flex flex-column align-items-center"> 
                     <figure>
-                        <img src="{{asset('images/cactus1.jpg')}}" alt="Product Image">
-                    </figure>
+                        <a href="/product/1">
+                            <img src="{{asset('images/cactus1.jpg')}}" alt="Product Image">
+                        </a>
+                        </figure>
                     <p class="product-title">Corsage Cactus</p>
                     <h3 class="product-price">$12.50</h3>
                 </div>

@@ -11,7 +11,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        $data = [
+            'title' => "Bringing Life",
+            'subtitle' => "To Your Space",
+        ];
+
+        return view('home.index')->with($data);
     }
 
     /**
