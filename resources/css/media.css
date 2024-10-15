@@ -1,0 +1,133 @@
+@media (max-width: 768px) {
+
+    #products img 
+    {
+        object-fit: contain; 
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #products 
+    {
+        margin-top: -15px !important;
+    }
+
+    .navbar-collapse .navbar-nav 
+    {
+        text-align: center;
+    }
+
+    .navbar-collapse form {
+        margin-left: unset !important;
+    }
+
+    .collapse .ms-auto 
+    {
+        max-width: unset !important;
+        width: unset !important;
+    }
+
+    #about .row .col-md-6 
+    {
+        width: unset !important;
+    }
+
+    #about .row .about-bg-section
+    {
+        display: none !important;
+    }
+
+    #products .header-btn 
+    {
+        padding: 13px 46px !important;
+    }
+
+    .product-title 
+    {
+        font-size: 27px !important;
+    }
+
+    .product-price 
+    {
+        font-size: 33px !important;
+    }
+
+    #contact .send-message-btn
+    {
+        padding: 12px 33px !important; 
+    }
+
+    .stock 
+    {
+        display: none !important;
+    }
+
+    .product-details 
+    {
+        margin-top: 45px !important;
+    }
+
+    #shop .product-img-container 
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #shop .all-products 
+    {
+        margin-top: 55px !important;
+    }
+
+    #shop .product-price 
+    {
+        font-size: 26px !important; 
+    }
+
+    #shop .pagination-container 
+    {
+        justify-content: center !important;
+    }
+
+    #shop .product-img-container img 
+    {
+        height: 280px !important;
+        width: 280px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #homepage .title-one 
+    {
+        text-align: center !important;
+    }
+
+    #homepage .col-12 .ms-auto
+    {
+        margin-left: unset !important;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse .navbar-nav 
+    {
+        text-align: center;
+    }
+
+    .navbar-collapse form {
+        margin-left: unset !important;
+    }
+
+    .collapse .ms-auto 
+    {
+        max-width: unset !important;
+        width: unset !important;
+    }
+
+    #single .add-to-cart-button 
+    {
+        padding: 13px 128px !important;
+    }
+}
