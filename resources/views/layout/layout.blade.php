@@ -14,6 +14,8 @@
         @vite(['resources/js/app.js'])
     </head>
     <body class="container">
+        @include('partials.nav')
         @yield('content')
+        @include('partials.footer')
     </body>
-</html>
+</html> 
