@@ -6,22 +6,17 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class FormInput extends Component
+class ColumnLayout extends Component
 {
-
-    public $label;
-    public $name;
-    public $type;
-
     /**
      * Create a new component instance.
      */
-    public function __construct($label, $name, $type)
+
+     public $class;
+
+    public function __construct($class = 'col-12 col-md-6 d-flex align-items-center justify-content-center')
     {
-        $this->label = $label;
-        $this->name = $name;
-        $this->type = $type;
-        
+        $this->class = $class;
     }
 
     /**
@@ -29,6 +24,6 @@ class FormInput extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.form-input');
+        return view('components.column-layout');
     }
 }

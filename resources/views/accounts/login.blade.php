@@ -3,20 +3,26 @@
 @section('content')
     <section id="login" class="d-flex align-items-center justify-content-center h-auto w-100">
         <div class="row">
-            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+            <x-column-layout>
                 <div class="vector-bg">
                     <figure>
                         <img src="{{asset('images/cactus.png')}}" alt="Cactus Vector Image" class="img-fluid">
                     </figure>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+            </x-column-layout>
+            <x-column-layout>
                 <form action="" method="POST">
                     <h2 class="mb-4">Let's get started.</h2>
-                    <label for="" class="form-label mt-2">Email Address</label>
-                    <input type="email" class="form-control line-input mb-2">
-                    <label for="" class="form-label">Password</label>
-                    <input type="password" class="form-control line-input mb-3">
+                    <x-form-input 
+                        label="Email Address" 
+                        name="email_address" 
+                        type="text"
+                    />
+                    <x-form-input 
+                        label="Password" 
+                        name="password" 
+                        type="password"
+                    />
                     <div class="d-flex justify-content-between">
                         <p>Don't have an account yet?</p>
                         <a href="/register" class="text-dark">Signup instead</a>
@@ -29,7 +35,7 @@
                         </button>
                     </div>
                 </form>
-            </div>
+            </x-column-layout>
         </div>
     </section>
 @endsection
