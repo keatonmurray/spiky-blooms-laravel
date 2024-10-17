@@ -1,3 +1,3 @@
-<div class="{{ $class }}">
+<div class="{{ $gridClass }} {{ $additionalClass }}">
     {{ $slot }}
 </div>

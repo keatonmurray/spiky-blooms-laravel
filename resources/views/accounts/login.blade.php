@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('content')
-    <section id="login" class="d-flex align-items-center justify-content-center h-auto w-100">
+    <x-flex-centered-column id="login" additional-class="h-auto w-auto">
         <div class="row">
             <x-column-layout>
                 <div class="vector-bg">
@@ -10,7 +10,7 @@
                     </figure>
                 </div>
             </x-column-layout>
-            <x-column-layout>
+            <x-column-layout additional-class="justify-content-center align-items-center">
                 <form action="" method="POST">
                     <h2 class="mb-4">Let's get started.</h2>
                     <x-form-input 
@@ -37,5 +37,5 @@
                 </form>
             </x-column-layout>
         </div>
-    </section>
+    </x-flex-centered-column>
 @endsection

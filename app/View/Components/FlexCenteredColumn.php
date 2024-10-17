@@ -6,26 +6,31 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ColumnLayout extends Component
+class FlexCenteredColumn extends Component
 {
     /**
      * Create a new component instance.
      */
 
-     public $gridClass;
-     public $additionalClass;
-
-    public function __construct($gridClass = 'col-12 col-md-6 d-flex', $additionalClass = '')
+    public $id;
+    public $flexCentered;
+    public $additionalClass;
+    
+    public function __construct(
+        $id = '', 
+        $flexCentered = '', 
+        $additionalClass = '')
     {
-        $this->gridClass = $gridClass;
+        $this->id = $id;
+        $this->flexCentered = $flexCentered;
         $this->additionalClass = $additionalClass;
-    }
+    }   
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components.column-layout');
+        return view('components.flex-centered-column');
     }
 }
