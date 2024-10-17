@@ -1,4 +1,4 @@
-<section id="{{ $section }}" class="mt-4">
+<section id="{{ $section }}" class="{{ $class }}">
     <div class="home-heading text-center mb-4">
         <h1>
             Have any questions?
@@ -40,7 +40,7 @@
                 <textarea name="" id="" class="form-control line-input"></textarea>
             </div>
         </div>
-        <div class="float-end mt-4">
+        <div class="float-end {{ $class }}">
             <button class="btn btn-dark send-message-btn" type="submit">
                 <i class="fas fa-paper-plane me-2"></i>
                 Send Message

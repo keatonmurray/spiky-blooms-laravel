@@ -1,4 +1,4 @@
-<section id = "{{ $section }}">
+<section id = "{{ $section }}" class = "{{ $class }}">
     <div class="row">
         <x-column-layout additional-class="justify-content-start align-items-center">
             <h1 class="heading title-one">{{$title}}

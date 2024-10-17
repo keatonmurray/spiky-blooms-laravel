@@ -15,12 +15,14 @@ class HomeComponent extends Component
     public $section;
     public $title;
     public $subtitle;
+    public $class;
     
-    public function __construct($section, $title, $subtitle)
+    public function __construct($section, $title, $subtitle, $class)
     {
         $this->section = $section;
         $this->title = $title;
         $this->subtitle = $subtitle;
+        $this->class = $class;
     }
 
     /**

@@ -13,11 +13,12 @@ class AboutComponent extends Component
      */
 
     public $section;
+    public $class;
 
-
-    public function __construct($section)
+    public function __construct($section, $class)
     {
         $this->section = $section;
+        $this->class = $class;
     }
 
     /**

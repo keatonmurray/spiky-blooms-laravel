@@ -1,11 +1,11 @@
-<section id="{{ $section }}" class="mt-4">
+<section id="{{ $section }}" class="{{ $class }}">
     <div class="row">
         <x-column-layout additional-class="flex-column align-items-center justify-content-center"> 
             <h1 class="about-heading text-center">
                 The most important things
                 <span class="d-block">are not things, so we design experiences.</span>
             </h1>
-            <form action="" class="mt-4 w-100 text-center">
+            <form action="" class="{{ $class }} w-100 text-center">
                 <div class="mb-2">
                     <label for="emailInput" class="form-label text-dark fs-5 fw-500">Subscribe to our newsletter</label>
                 </div>
