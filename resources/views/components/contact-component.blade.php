@@ -1,4 +1,4 @@
-<section id="contact" class="mt-4">
+<section id="{{ $section }}" class="mt-4">
     <div class="home-heading text-center mb-4">
         <h1>
             Have any questions?
@@ -8,20 +8,32 @@
     <form action="" class="contact-form">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-12 col-md-6">
-                <label for="" class="form-label">First Name</label>
-                <input type="text" class="form-control line-input mb-4">
+                <x-form-input 
+                    label="First Name" 
+                    name="first_name" 
+                    type="text"
+                />
             </div>
             <div class="col-12 col-md-6">
-                <label for="" class="form-label">Last Name</label>
-                <input type="text" class="form-control line-input mb-4">
+                <x-form-input 
+                    label="Last Name" 
+                    name="last_name" 
+                    type="text"
+                />
             </div>
             <div class="col-12 col-md-6">
-                <label for="" class="form-label">Phone Number</label>
-                <input type="text" class="form-control line-input mb-4">
+                <x-form-input 
+                    label="Phone Number" 
+                    name="phone_number" 
+                    type="text"
+                />
             </div>
             <div class="col-12 col-md-6">
-                <label for="" class="form-label">Email Address</label>
-                <input type="text" class="form-control line-input mb-4">
+                <x-form-input 
+                    label="Email Address" 
+                    name="email_address" 
+                    type="text"
+                />
             </div>
             <div class="col-12">
                 <label for="" class="form-label">Message</label>

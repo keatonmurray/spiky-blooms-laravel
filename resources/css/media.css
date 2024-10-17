@@ -108,6 +108,18 @@
         margin-left: unset !important;
         margin-top: 30px;
     }
+
+    #homepage .row
+    {
+        display: unset !important;
+        flex-wrap: nowrap !important;
+    }
+
+    #homepage .row .justify-content-start
+    {
+        align-content: center !important;
+        justify-content: center !important;
+    }
 }
 
 @media (max-width: 992px) {

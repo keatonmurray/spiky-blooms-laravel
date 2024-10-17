@@ -1,4 +1,4 @@
-<section id="products" class="full-height">
+<section id="{{ $section }}" class="full-height">
     <div class="row">
         <div class="home-heading col-12 col-md-6 text-center text-lg-start">
             <h1>
@@ -15,7 +15,7 @@
     </div>
     <br><br>
     
-    <div id="products" class="mt-4">
+    <div id=" {{ $id }}" class="mt-4">
         <div class="row">
             <div class="products col-12 col-md-3">
                 <div class="product-img-container text-center d-flex flex-column align-items-center"> 

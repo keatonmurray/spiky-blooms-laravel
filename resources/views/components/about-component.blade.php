@@ -1,6 +1,6 @@
-<section id="about" class="mt-4">
+<section id="{{ $section }}" class="mt-4">
     <div class="row">
-        <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+        <x-column-layout additional-class="flex-column align-items-center justify-content-center"> 
             <h1 class="about-heading text-center">
                 The most important things
                 <span class="d-block">are not things, so we design experiences.</span>
@@ -16,11 +16,11 @@
                     </button>
                 </div>
             </form>
-        </div>
-        <div class="col-12 col-md-6 d-flex justify-content-end about-bg-section">
+        </x-column-layout>
+        <x-column-layout additional-class="justify-content-end about-bg-section">
             <figure class="ms-auto">
                 <img src="{{asset('images/about.jpg')}}" class="about-section-img" salt="Background Image">
             </figure>
-        </div>
+        </x-column-layout>
     </div>
 </section>
