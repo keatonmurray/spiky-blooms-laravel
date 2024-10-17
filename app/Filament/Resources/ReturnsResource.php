@@ -18,6 +18,7 @@ class ReturnsResource extends Resource
     protected static ?string $model = Returns::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationParentItem = 'Notifications'; 
 
     public static function form(Form $form): Form
     {
