@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -11,12 +12,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $getAllProducts = Product::all();
+
         $data = [
             'title' => "Bringing Life",
             'subtitle' => "To Your Space",
+            'products' => $getAllProducts
         ];
 
         return view('home.index')->with($data);
+
     }
 
     /**
