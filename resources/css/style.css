@@ -117,7 +117,7 @@
 
 
   #products .header-btn:hover, 
-  #contact .send-message-btn:hover,
+  .send-message-btn:hover,
   #single .add-to-cart:hover
   {
     background-color: #fff;
@@ -179,7 +179,7 @@
     margin: 100px 0;
   }
 
-  #contact .send-message-btn 
+  .send-message-btn 
   {
     padding: 10px 20px;
     background-color: #000;

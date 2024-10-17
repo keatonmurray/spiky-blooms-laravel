@@ -40,7 +40,7 @@
                 <textarea name="" id="" class="form-control line-input"></textarea>
             </div>
         </div>
-        <div class="float-end {{ $class }}">
+        <div class="float-end mt-4">
             <button class="btn btn-dark send-message-btn" type="submit">
                 <i class="fas fa-paper-plane me-2"></i>
                 Send Message
