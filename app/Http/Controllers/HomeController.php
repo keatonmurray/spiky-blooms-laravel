@@ -12,7 +12,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $getAllProducts = Product::all();
+        $getAllProducts = Product::take(4)->get();
 
         $data = [
             'title' => "Bringing Life",
