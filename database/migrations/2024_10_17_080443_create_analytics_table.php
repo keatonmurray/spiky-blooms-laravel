@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('promos', function (Blueprint $table) {
+        Schema::create('analytics', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->integer('visits')->default(0);
+            $table->decimal('sales', 10, 2)->default(0);
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('promos');
+        Schema::dropIfExists('analytics');
     }
 };
