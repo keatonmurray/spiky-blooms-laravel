@@ -19,14 +19,6 @@ class FilamentServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Filament::serving(function () {
-        //     Filament::registerNavigationGroups([
-        //         NavigationGroup::make('Products')
-        //             ->items([
-        //                 CategoriesResource::getNavigationItem(),
-        //                 CatalogsResource::getNavigationItem(),
-        //             ]),
-        //     ]);
-        // });
+        //
     }
 }
