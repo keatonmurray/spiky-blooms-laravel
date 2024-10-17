@@ -24,33 +24,27 @@ class ProductResource extends Resource
         return $form
         ->schema([
             Forms\Components\TextInput::make('name')
-                ->required()
                 ->label('Product Name'),
     
             Forms\Components\TextInput::make('price')
-                ->required()
                 ->label('Price')
                 ->numeric()
                 ->minValue(0),
     
             Forms\Components\Textarea::make('description')
-                ->required()
                 ->label('Description'),
     
             Forms\Components\TextInput::make('quantity')
-                ->required()
                 ->label('Quantity')
                 ->numeric()
                 ->minValue(0),
     
             Forms\Components\TextInput::make('sku')
-                ->required()
                 ->label('SKU'),
     
             Forms\Components\FileUpload::make('image')
                 ->label('Product Image')
-                ->image()
-                ->required(),
+                ->image(),
     
             Forms\Components\Toggle::make('on_sale')
                 ->label('On Sale')
@@ -77,24 +71,119 @@ class ProductResource extends Resource
     
     }
 
+    // public static function create(array $data)
+    // {
+    //     if (isset($data['image'])) {
+    //         $data['image'] = $data['image']->store('products', 'public'); 
+    //     }
+
+    //     if (isset($data['attributes'])) {
+    //         $data['attributes'] = json_encode($data['attributes']);
+    //     }
+    //     if (isset($data['tags'])) {
+    //         $data['tags'] = implode(',', $data['tags']); 
+    //     }
+
+    //     return Product::create($data);
+    // }
+
+
+    // protected function update(Model $record, array $data)
+    // {
+    //     if (isset($data['image'])) {
+    //         $data['image'] = $data['image']->store('products', 'public'); 
+    //     }
+
+    //     if (isset($data['attributes'])) {
+    //         $data['attributes'] = json_encode($data['attributes']);
+    //     }
+    //     if (isset($data['tags'])) {
+    //         $data['tags'] = implode(',', $data['tags']);
+    //     }
+
+    //     $record->update($data);
+    // }
+
+
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')
+                    ->label('ID')
+                    ->sortable()
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make('name')
+                    ->label('Product Name')
+                    ->sortable()
+                    ->searchable(),
+
+                Tables\Columns\TextColumn::make('price')
+                    ->label('Price')
+                    ->sortable()
+                    ->formatStateUsing(fn ($state) => '$' . number_format($state, 2)), 
+
+                Tables\Columns\TextColumn::make('quantity')
+                    ->label('Quantity')
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('sku')
+                    ->label('SKU')
+                    ->sortable(),
+
+                Tables\Columns\ImageColumn::make('image')
+                    ->label('Product Image')
+                    ->disk('public'),
+
+                Tables\Columns\BooleanColumn::make('on_sale')
+                    ->label('On Sale')
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('sale_price')
+                    ->label('Sale Price')
+                    ->sortable()
+                    ->formatStateUsing(fn ($state) => $state ? '$' . number_format($state, 2) : 'N/A'), // Format as currency
+
+                Tables\Columns\TextColumn::make('attributes')
+                    ->label('Attributes')
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('tags')
+                    ->label('Tags')
+                    ->sortable(),
+
+                Tables\Columns\BooleanColumn::make('active')
+                    ->label('Active')
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created At')
+                    ->dateTime()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Updated At')
+                    ->dateTime()
+                    ->sortable(),
             ])
             ->filters([
-                //
+                Tables\Filters\Filter::make('active')
+                    ->query(fn (Builder $query) => $query->where('active', true))
+                    ->label('Active Products'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make(), 
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make(), 
                 ]),
             ]);
     }
+
+
 
     public static function getRelations(): array
     {
