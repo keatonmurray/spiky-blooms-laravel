@@ -19,6 +19,11 @@ class ProductResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getNavigationSort(): ?int
+    {
+        return 1;
+    }
+    
     public static function form(Form $form): Form
     {
         return $form
@@ -42,9 +47,9 @@ class ProductResource extends Resource
             Forms\Components\TextInput::make('sku')
                 ->label('SKU'),
     
-            Forms\Components\FileUpload::make('image')
-                ->label('Product Image')
-                ->image(),
+            // Forms\Components\FileUpload::make('image')
+            //     ->label('Product Image')
+            //     ->image(),
     
             Forms\Components\Toggle::make('on_sale')
                 ->label('On Sale')
@@ -60,9 +65,9 @@ class ProductResource extends Resource
                 ->nullable()
                 ->label('Attributes'),
     
-            Forms\Components\TagsInput::make('tags')
-                ->nullable()
-                ->label('Tags'),
+            // Forms\Components\TagsInput::make('tags')
+            //     ->nullable()
+            //     ->label('Tags'),
     
             Forms\Components\Toggle::make('active')
                 ->label('Active')
@@ -70,40 +75,6 @@ class ProductResource extends Resource
         ]);
     
     }
-
-    // public static function create(array $data)
-    // {
-    //     if (isset($data['image'])) {
-    //         $data['image'] = $data['image']->store('products', 'public'); 
-    //     }
-
-    //     if (isset($data['attributes'])) {
-    //         $data['attributes'] = json_encode($data['attributes']);
-    //     }
-    //     if (isset($data['tags'])) {
-    //         $data['tags'] = implode(',', $data['tags']); 
-    //     }
-
-    //     return Product::create($data);
-    // }
-
-
-    // protected function update(Model $record, array $data)
-    // {
-    //     if (isset($data['image'])) {
-    //         $data['image'] = $data['image']->store('products', 'public'); 
-    //     }
-
-    //     if (isset($data['attributes'])) {
-    //         $data['attributes'] = json_encode($data['attributes']);
-    //     }
-    //     if (isset($data['tags'])) {
-    //         $data['tags'] = implode(',', $data['tags']);
-    //     }
-
-    //     $record->update($data);
-    // }
-
 
     public static function table(Table $table): Table
     {
@@ -119,10 +90,14 @@ class ProductResource extends Resource
                     ->sortable()
                     ->searchable(),
 
-                Tables\Columns\TextColumn::make('price')
+                Tables\Columns\TextColumn::make('description')
                     ->label('Price')
+                    ->sortable(),
+
+                    Tables\Columns\TextColumn::make('name')
+                    ->label('Product Name')
                     ->sortable()
-                    ->formatStateUsing(fn ($state) => '$' . number_format($state, 2)), 
+                    ->searchable(),
 
                 Tables\Columns\TextColumn::make('quantity')
                     ->label('Quantity')
@@ -132,9 +107,9 @@ class ProductResource extends Resource
                     ->label('SKU')
                     ->sortable(),
 
-                Tables\Columns\ImageColumn::make('image')
-                    ->label('Product Image')
-                    ->disk('public'),
+                // Tables\Columns\ImageColumn::make('image')
+                //     ->label('Product Image')
+                //     ->disk('public'),
 
                 Tables\Columns\BooleanColumn::make('on_sale')
                     ->label('On Sale')
@@ -149,9 +124,9 @@ class ProductResource extends Resource
                     ->label('Attributes')
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('tags')
-                    ->label('Tags')
-                    ->sortable(),
+                // Tables\Columns\TextColumn::make('tags')
+                //     ->label('Tags')
+                //     ->sortable(),
 
                 Tables\Columns\BooleanColumn::make('active')
                     ->label('Active')
