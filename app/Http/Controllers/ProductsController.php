@@ -8,12 +8,18 @@ use App\Models\Product;
 class ProductsController extends Controller
 {
 
-    public function show_all_products()
+    public function index()
     {
-        return view('pages.shop');
+        $getAllProducts = Product::all();
+
+        $data = [
+            'heading' => 'Hello, plant lovers.',
+            'products' => $getAllProducts
+        ];
+        return view('pages.shop')->with($data);
     }
 
-    public function show_single_product(string $id)
+    public function show(string $id)
     {
         return view('pages.single-product');
     }
