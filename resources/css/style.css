@@ -113,6 +113,9 @@
     font-weight: 500;
     padding: 7px 22px;
     border: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 

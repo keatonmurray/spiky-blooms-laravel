@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('catalogs', function (Blueprint $table) {
             $table->id();
-            $table->string('product');
+            $table->string('catalog_name');
+            $table->string('price_range');
+            $table->longText('description');
             $table->timestamps();
         });
     }

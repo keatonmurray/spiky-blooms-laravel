@@ -15,14 +15,14 @@ class ProductsComponent extends Component
     public $section;
     public $id;
     public $class;
-    public $products;
+    public $catalogs;
     
-    public function __construct($section, $id, $class, $products)
+    public function __construct($section, $id, $class, $catalogs)
     {
         $this->section = $section;
         $this->id = $id;
         $this->class = $class;
-        $this->products = $products;
+        $this->catalogs = $catalogs;
     }
 
     /**
