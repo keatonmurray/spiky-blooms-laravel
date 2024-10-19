@@ -24,26 +24,42 @@ class FeaturedProductsResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
+    ->schema([
+        Forms\Components\Grid::make()
+            ->columns(2)
             ->schema([
                 Forms\Components\TextInput::make('name')
-                    ->label('Product Name'),
+                ->label('Product Name'),
 
                 Forms\Components\TextInput::make('price')
-                    ->label('Price'),
-                
-                Forms\Components\Repeater::make('variations')
-                    ->label('Variations')
-                    ->schema([
-                        Forms\Components\TextInput::make('value')
-                            ->label('Variation')
-                            ->required(),
-                    ])
-                    ->collapsible(),
-                    
+                ->label('Price'),
+
                 Forms\Components\Textarea::make('description')
-                    ->label('Description')
-                    ->rows(5),
-            ]);
+                ->label('Description')
+                ->rows(5)
+                ->columnSpanFull(),
+
+                Forms\Components\Repeater::make('variations')
+                ->label('Variations')
+                ->schema([
+                    Forms\Components\TextInput::make('value')
+                        ->label('Variation')
+                        ->required(),
+                ]),
+
+                Forms\Components\FileUpload::make('image')
+                ->label('Product Image')
+                ->image()
+                ->required()
+                ->preserveFilenames()
+                ->maxSize(1024)
+                ->disk('public')
+                ->directory('products')
+                ->enableOpen(),
+
+            ]),
+    ]);
+
     }
 
     public static function table(Table $table): Table
