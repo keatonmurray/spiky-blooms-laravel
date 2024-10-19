@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Catalog;
+use App\Models\FeaturedProduct;
 
 class HomeController extends Controller
 {
@@ -12,12 +12,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $getCatalogs = Catalog::take(4)->get();
+        $getProducts = FeaturedProduct::take(4)->get();
 
         $data = [
             'title' => "Bringing Life",
             'subtitle' => "To Your Space",
-            'catalogs' => $getCatalogs
+            'products' => $getProducts
         ];
 
         return view('home.index')->with($data);
@@ -45,7 +45,8 @@ class HomeController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $getSingleProduct = FeaturedProduct::find($id);
+        return view('pages.single-product')->with('product', $getSingleProduct);
     }
 
     /**

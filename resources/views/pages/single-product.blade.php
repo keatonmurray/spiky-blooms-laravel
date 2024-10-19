@@ -19,22 +19,27 @@
                 </div>
             </div>
             <div class="col-12 col-md-7 d-flex flex-column justify-content-start align-items-start">
-                <div class="stock mb-2">3 items left</div>
                 <div class="product-details">
-                    <h4 class="product-title mb-3">Corsage Cactus</h4>
-                    <h3 class="product-price">$12.50</h3>
-                    <h5 class="product-description">Bring a touch of the desert into your home with our Desert Bloom Cactus, the perfect low-maintenance plant that thrives on neglect! Known for its striking appearance and resilience, this cactus features plump, spiny stems that store water, making it ideal for busy plant lovers or those with a less-than-green thumb.</h5>
-                    <div class="add-to-cart mt-auto">
-                        <div class="px-4 d-flex justify-content-center align-items-center">
-                            <div class="plus mx-2">+</div> 
-                            <div class="quantity">1</div>
-                            <div class="minus mx-2">-</div> 
-                        </div>
+                    <h4 class="product-title mb-3">{{ $product->name }}</h4>
+                    <h3 class="product-price">${{ $product->price }}</h3>
+                    <h6>Select Quantity</h6>
+                    <div class="d-flex my-3">
+                        <button class="btn btn-dark">+</button>
+                        <span class="quantity-display">1</span>
+                        <button class="btn btn-dark">-</button>
                     </div>
-                    <button class="btn btn-dark add-to-cart-button">
+                    <h6>Variation</h6>
+                    <select name="vartation" id="quantity" class="form-select">
+                        <option value="" disabled selected>Select variation</option>
+                        @foreach($product->variations as $variation)
+                            <option value="{{ $variation['value'] }}">{{ $variation['value'] }}</option>
+                        @endforeach
+                    </select>
+                    <button class="btn btn-dark add-to-cart-button mt-4">
                         <i class="fas fa-cart-plus me-2"></i>
                         Add to cart
                     </button>
+                    <h5 class="product-description">{{ $product->description }}</h5>
                 </div>
             </div>
         </div>

@@ -221,7 +221,6 @@
   #single .add-to-cart
   {
     font-size: 25px;
-    border: 1px solid #525252 !important;
     padding: 8px;
     margin-top: 86px !important;
     border-radius: 50px !important;
@@ -242,11 +241,9 @@
 
   #single .add-to-cart-button
   {
-    margin-top: 20px;
-    padding: 13px 157px;
+    margin: 12px 0 20px 0;
     background-color: #000 !important;
-    width: 100% !important;
-    border-radius: 50px !important;
+    width: 100%;
   }
 
   #single figure img
@@ -308,6 +305,16 @@
     border-radius: 20px !important;
     border: 0 !important;
     padding: 8px;
+  }
+
+  .quantity-display 
+  {
+    padding: 0.375rem 0.75rem; 
+    margin: 0; 
+    color: #212529; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
   }
 
   footer 
