@@ -31,9 +31,9 @@
                     <h6>Variation</h6>
                     <select name="vartation" id="quantity" class="form-select">
                         <option value="" disabled selected>Select variation</option>
-                        {{-- @foreach($product->variations as $variation)
+                        @foreach($product->variations as $variation)
                             <option value="{{ $variation['value'] }}">{{ $variation['value'] }}</option>
-                        @endforeach --}}
+                        @endforeach
                     </select>
                     <p class="my-1">Items in stock: {{ $product->quantity }}</p>
                     <button class="btn btn-dark add-to-cart-button mt-4">

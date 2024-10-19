@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\Shop;
 
-class ProductsController extends Controller
+class ShopController extends Controller
 {
 
     public function index()
     {
-        $getAllProducts = Product::all();
+        $getAllProducts = Shop::all();
 
         $data = [
             'heading' => 'Hello, plant lovers.',
@@ -21,7 +21,7 @@ class ProductsController extends Controller
 
     public function show(string $id)
     {
-        $getSingleCatalog = Product::find($id);
+        $getSingleCatalog = Shop::find($id);
         return view('pages.single-shop-product')->with('product', $getSingleCatalog);
     }
 }
