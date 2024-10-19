@@ -9,6 +9,6 @@ class FeaturedProduct extends Model
     protected $fillable = ['name', 'price', 'variations', 'description'];
 
     protected $casts = [
-        'variations' => 'array',
+        'variations' => 'array',    
     ];
 }

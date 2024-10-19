@@ -53,8 +53,7 @@ class FeaturedProductsResource extends Resource
                 Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('name')->label('Name')->searchable(),
                 Tables\Columns\TextColumn::make('price')->label('Price')->searchable(),
-                Tables\Columns\TextColumn::make('variations')->label('Variations')->json(),
-                Tables\Columns\TextColumn::make('description')->label('Description')->searchable(),
+                Tables\Columns\TextColumn::make('description')->label('Description')->limit(50)->searchable(),
                 Tables\Columns\TextColumn::make('created_at')->label('Created At')->dateTime(),
             ])
             ->filters([
