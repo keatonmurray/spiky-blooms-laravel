@@ -59,7 +59,9 @@
                         @foreach ($products as $product)
                             <div class="col-12 col-md-3">
                                 <figure class="product-img-container">
-                                    <img src="{{asset('images/product1.jpg')}}" alt="Product Image" class="img-fluid shop-page-image">
+                                    <a href="/shop/product/{{ $product->id }}">
+                                        <img src="{{asset('images/product1.jpg')}}" alt="Product Image" class="img-fluid shop-page-image">
+                                    </a>
                                 </figure>
                                 <div class="product-details text-center">
                                     <p class="product-name">{{$product->name}}</p>

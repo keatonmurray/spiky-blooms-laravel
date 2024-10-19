@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Catalog;
 
 class ProductsController extends Controller
 {
@@ -22,7 +21,7 @@ class ProductsController extends Controller
 
     public function show(string $id)
     {
-        $getSingleCatalog = Catalog::find($id);
-        return view('pages.single-product');
+        $getSingleCatalog = Product::find($id);
+        return view('pages.single-shop-product')->with('product', $getSingleCatalog);
     }
 }

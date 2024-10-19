@@ -15,4 +15,4 @@ Route::get('/register', [AccountController::class, 'register']);
 
 /********** PRODUCTS CONTROLLER **********/
 Route::get('/shop', [ProductsController::class, 'index']);
-// Route::get('/product/{id}', [ProductsController::class, 'show']);
+Route::get('/shop/product/{id}', [ProductsController::class, 'show']);
