@@ -21,9 +21,13 @@
                 @foreach($products as $product)
                     <div class="{{ $id }} col-12 col-md-3">
                         <div class="product-img-container text-center d-flex flex-column align-items-center"> 
-                            <figure>
+                            <figure class="img-container">
                                 <a href="/product/{{ $product->id }}"> 
-                                    <img src="{{ asset('images/cactus1.jpg') }}" alt="{{ $product->name }}" class="img-fluid">
+                                    @if (is_array($product->image) && count($product->image) > 0)
+                                            <img src="{{ asset('storage/' . $product->image[0]) }}" alt="{{ $product->name }}" class="img-fluid"> 
+                                    @elseif (!empty($product->image)) // This handles the case where a single string is returned
+                                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid">
+                                    @endif
                                 </a>
                             </figure>
                             <p class="product-title">{{ $product->name }}</p> 

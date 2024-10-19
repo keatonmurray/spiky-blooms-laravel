@@ -4,17 +4,17 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-5 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="{{asset('images/plant1.jpg')}}" class="product-image img-fluid" alt="Product Image">
+                    @if (is_array($product->image) && count($product->image) > 0)
+                            <img src="{{ asset('storage/' . $product->image[0]) }}" alt="{{ $product->name }}" class="product-image img-fluid"> 
+                    @elseif (!empty($product->image)) // This handles the case where a single string is returned
+                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid">
+                    @endif
                 </figure>
                 <div class="d-flex justify-content-center mt-3">
                     <figure class="mx-2">
-                        <img src="{{asset('images/plant1.jpg')}}" class="product-preview-image img-fluid" alt="Product Image">
-                    </figure>
-                    <figure class="mx-2">
-                        <img src="{{asset('images/plant1.jpg')}}" class="product-preview-image img-fluid" alt="Product Image">
-                    </figure>
-                    <figure class="mx-2">
-                        <img src="{{asset('images/plant1.jpg')}}" class="product-preview-image img-fluid" alt="Product Image">
+                        @foreach ($product->image as $img)
+                            <img src="{{ asset('storage/' . $img) }}" class="product-preview-image img-fluid" alt="Product Image">
+                        @endforeach
                     </figure>
                 </div>
             </div>
@@ -35,10 +35,12 @@
                             <option value="{{ $variation['value'] }}">{{ $variation['value'] }}</option>
                         @endforeach
                     </select>
+                    <p class="mt-2">Items in stock: {{ $product->quantity }}</p>
                     <button class="btn btn-dark add-to-cart-button mt-4">
                         <i class="fas fa-cart-plus me-2"></i>
                         Add to cart
                     </button>
+                    <p class="my-1 text-small">SKU: {{ $product->sku }}</p>
                     <h5 class="product-description">{{ $product->description }}</h5>
                 </div>
             </div>

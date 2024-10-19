@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('price');
             $table->json('variations')->nullable(); 
+            $table->string('sku');
+            $table->string('quantity');
             $table->longText('description');
+            $table->json('image');
             $table->timestamps();
         });
     }
