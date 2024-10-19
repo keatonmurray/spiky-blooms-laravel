@@ -92,6 +92,14 @@ class ShopResource extends Resource
         ];
     }
 
+    protected function getEmptyState(): array
+    {
+        return [
+            'heading' => 'No products found',
+            'description' => 'It seems you haven’t added any categories yet. Please create some to get started.',
+        ];
+    }
+
     public static function getPages(): array
     {
         return [

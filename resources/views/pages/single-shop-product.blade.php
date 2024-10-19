@@ -35,12 +35,12 @@
                             <option value="{{ $variation['value'] }}">{{ $variation['value'] }}</option>
                         @endforeach
                     </select>
-                    <p class="my-1">Items in stock: {{ $product->quantity }}</p>
+                    <p class="mt-2">Items in stock: {{ $product->quantity }}</p>
                     <button class="btn btn-dark add-to-cart-button mt-4">
                         <i class="fas fa-cart-plus me-2"></i>
                         Add to cart
                     </button>
-                    <p class="my-1">SKU: {{ $product->sku }}</p>
+                    <p class="my-1 text-small">SKU: {{ $product->sku }}</p>
                     <h5 class="product-description">{{ $product->description }}</h5>
                 </div>
             </div>

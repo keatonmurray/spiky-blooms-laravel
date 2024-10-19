@@ -13,6 +13,6 @@ Route::get('/product/{id}', [HomeController::class, 'show']);
 Route::get('/login', [AccountController::class, 'login']);
 Route::get('/register', [AccountController::class, 'register']);
 
-/********** PRODUCTS CONTROLLER **********/
+/********** SHOP CONTROLLER **********/
 Route::get('/shop', [ShopController::class, 'index']);
 Route::get('/shop/product/{id}', [ShopController::class, 'show']);
