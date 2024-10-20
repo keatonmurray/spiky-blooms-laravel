@@ -6,53 +6,44 @@
                 <div class="col-12 col-md-7">
                     <div class="contact-info shadow p-4">
                         <h5 class="my-4">Contact Information</h5>
-                        <div class="mb-3">
-                            <label for="contact-name" class="form-label">Name</label>
-                            <input type="text" class="form-control line-input" id="contact-name">
+                        <div class="mb-2">
+                            <x-form-input name="contact-name" label="Name" type="text"/>
                         </div>
-                        <div class="mb-3">
-                            <label for="contact-email" class="form-label">Email Address</label>
-                            <input type="email" class="form-control line-input" id="contact-email">
+                        <div class="mb-2">
+                            <x-form-input name="contact-email" label="Email Address" type="email"/>
                         </div>
-                        <div class="mb-3">
-                            <label for="contact-phone" class="form-label">Contact Number</label>
-                            <input type="tel" class="form-control line-input" id="contact-phone">
+                        <div class="mb-2">
+                            <x-form-input name="contact-phone" label="Contact Number" type="text"/>
                         </div>
         
                         <h5 class="my-4">Shipping Address</h5>
                         <div class="row">
                             <div class="col-12 col-md-8">
-                                <div class="mb-3">
-                                    <label for="shipping-name" class="form-label">Street Address</label>
-                                    <input type="text" class="form-control line-input" id="shipping-name">
+                                <div class="mb-2">
+                                    <x-form-input name="street-address" label="Street Address" type="text"/>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
-                                <div class="mb-3">
-                                    <label for="shipping-email" class="form-label">Apt # (optional)</label>
-                                    <input type="email" class="form-control line-input" id="shipping-email">
+                                <div class="mb-2">
+                                    <x-form-input name="apartment-number" label="Apt #" type="text"/>
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <div class="row">
                                 <div class="col-12 col-md-4">
-                                    <label for="shipping-phone" class="form-label">State</label>
-                                    <input type="tel" class="form-control line-input" id="shipping-phone">
+                                    <x-form-input name="state" label="State" type="text"/>
                                 </div>
                                 <div class="col-12 col-md-4">
-                                    <label for="shipping-phone" class="form-label">City</label>
-                                    <input type="tel" class="form-control line-input" id="shipping-phone">
+                                    <x-form-input name="city" label="City" type="text"/>
                                 </div>
                                 <div class="col-12 col-md-4">
-                                    <label for="shipping-phone" class="form-label">ZIP Code</label>
-                                    <input type="tel" class="form-control line-input" id="shipping-phone">
+                                    <x-form-input name="zip-code" label="ZIP Code" type="text"/>
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="shipping-phone" class="form-label">Country</label>
-                            <input type="tel" class="form-control line-input" id="shipping-phone">
+                        <div class="mb-2">
+                            <x-form-input name="country" label="Country" type="text"/>
                         </div>
                     </div>
                 </div>
@@ -61,15 +52,15 @@
                     <div class="cart-info card p-4 w-100" style="border-radius: 0 !important;">
                         <h5 class="my-4">Cart Info</h5>
                         <ul class="list-group mb-3">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
                                 Product 1
                                 <span class="badge bg-dark">$10.00</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
                                 Product 2
                                 <span class="badge bg-dark">$20.00</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
                                 Product 3
                                 <span class="badge bg-dark">$15.00</span>
                             </li>
