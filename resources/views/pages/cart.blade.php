@@ -2,7 +2,8 @@
 @section('content')
     <section id="cart">
         <div class="row">
-            <form class="d-flex flex-wrap">
+            <form class="d-flex flex-wrap" action="/pay" method="POST">
+                @csrf
                 <div class="col-12 col-md-7">
                     <div class="contact-info shadow p-4">
                         <h5 class="my-4">Contact Information</h5>
