@@ -323,6 +323,43 @@
     justify-content: center; 
   }
 
+  #cart 
+  {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  #cart .contact-info 
+  {
+    width: 95%;
+  }
+
+  #cart .cart-info  
+  {
+    background-color: #f8f8f8;
+    height: fit-content;  
+  }
+
+  #cart .cart-info > .list-group 
+  {
+    border-top: unset !important;
+    border-bottom: unset !important;
+    border-radius: 0 !important;
+  } 
+
+  #cart .list-group .badge
+  {
+    border-radius: 0 !important;
+    padding: 10px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #000 !important;
+    cursor: pointer;
+  } 
+
   footer 
   {
     height: auto;

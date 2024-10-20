@@ -94,6 +94,11 @@
         height: 280px !important;
         width: 280px !important;
     }
+
+    #cart .contact-info 
+    {
+        width: unset !important;
+    }
 }
 
 @media (max-width: 767px) {
