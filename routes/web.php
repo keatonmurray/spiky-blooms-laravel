@@ -35,4 +35,4 @@ Route::post('/store', [RegisterController::class, 'store'])->name('register.stor
 
 /********** LOGIN CONTROLLER ***********/
 Route::get('/login', [LoginController::class, 'index']);
-// Route::get('/login-user', [LoginController::class, 'login'])->name('login.show');
+Route::post('/login-user', [LoginController::class, 'store'])->name('login.store');

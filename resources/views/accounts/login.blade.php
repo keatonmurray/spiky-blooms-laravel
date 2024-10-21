@@ -11,11 +11,12 @@
                 </div>
             </x-column-layout>
             <x-column-layout additional-class="justify-content-center align-items-center">
-                <form action="" method="POST">
+                <form action="{{ route('login.store') }}" method="POST">
+                    @csrf
                     <h2 class="mb-4">Let's get started.</h2>
                     <x-form-input 
                         label="Email Address" 
-                        name="email_address" 
+                        name="email" 
                         type="text"
                     />
                     <x-form-input 
