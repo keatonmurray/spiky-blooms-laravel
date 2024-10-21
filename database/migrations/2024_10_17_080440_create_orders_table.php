@@ -13,8 +13,15 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->decimal('total', 10, 2);
-            $table->string('status')->default('pending');
+            $table->string('name');
+            $table->string('email_address');
+            $table->string('phone_number');
+            $table->string('street_address');
+            $table->string('apt_num');
+            $table->string('state');
+            $table->string('city');
+            $table->string('zip_code');
+            $table->string('country');
             $table->timestamps();
         });
     }

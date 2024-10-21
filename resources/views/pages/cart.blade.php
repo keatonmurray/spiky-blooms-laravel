@@ -77,6 +77,7 @@
                         <div class="list-group-item d-flex justify-content-between align-items-center my-1">
                             <strong>Subtotal</strong>
                             <span class="fw-bold">$45.00</span>
+                            <input type="hidden" name="amount" value="1">
                         </div>
                         <div class="mt-4">
                             <button class="btn btn-dark w-100" type="submit">

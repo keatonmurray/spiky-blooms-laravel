@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\CheckoutController;
+use App\Models\Order;
 
 class PaypalController extends Controller
 {
@@ -21,6 +23,8 @@ class PaypalController extends Controller
 
     public function initPayment(Request $request)
     {
+        $amount = $request->input('amount');
+
         $data = [
             'intent' => 'sale',
             'payer' => [
@@ -29,7 +33,7 @@ class PaypalController extends Controller
             'transactions' => [
                 [
                     'amount' => [
-                        'total' => 100,
+                        'total' => $amount,
                         'currency' => 'USD',
                     ],
                     'description' => 'Payment for order',
@@ -105,7 +109,7 @@ class PaypalController extends Controller
             $result = $this->executePayment($payment_id, $payer_id);
 
             if (isset($result['state']) && $result['state'] === 'approved') {
-                return redirect('/')->with('success', 'Payment successful!');
+                return redirect('/');
             }
             return 'Payment not approved.';
         }
@@ -114,7 +118,7 @@ class PaypalController extends Controller
 
     public function cancel()
     {
-        return 'Payment canceled!';
+        return redirect('/');
     }
 
     private function executePayment($payment_id, $payer_id)
