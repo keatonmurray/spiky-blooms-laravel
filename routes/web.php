@@ -19,3 +19,4 @@ Route::get('cancel', [CartController::class, 'cancel'])->name('paypal.cancel');
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'create'])->name('register');
+Route::post('/store', [AuthController::class, 'store'])->name('create-user');
