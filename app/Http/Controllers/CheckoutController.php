@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TotalOrder;
+use App\Models\Cart;
 use Illuminate\Support\Facades\Http;
 
 class CheckoutController extends Controller
@@ -20,9 +21,27 @@ class CheckoutController extends Controller
     }
 
     public function index()
-    {
-        return view('cart.index');
+    {   
+        $getCartItems = Cart::all();
+        $fixedShippingFee = 7; //temporarily static
+        $fixedVatFee = 1.90; //temporarily static
+        $total = 0;
+    
+        foreach ($getCartItems as $item) {
+            $total += $item->price;
+        }
+    
+        $subtotal = $total + $fixedShippingFee + $fixedVatFee;
+    
+        $data = [
+            'items' => $getCartItems,
+            'subtotal' => $subtotal,
+            'total' => $total
+        ];
+    
+        return view('cart.index')->with($data);
     }
+    
 
     public function payment(Request $request)
     {

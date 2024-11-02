@@ -53,18 +53,16 @@
                     <div class="cart-info card p-4 w-100" style="border-radius: 0 !important;">
                         <h5 class="my-4">Cart Info</h5>
                         <ul class="list-group mb-3">
-                            <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
-                                Product 1
-                                <span class="badge bg-dark">$10.00</span>
-                            </li>
-                            <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
-                                Product 2
-                                <span class="badge bg-dark">$20.00</span>
-                            </li>
-                            <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
-                                Product 3
-                                <span class="badge bg-dark">$15.00</span>
-                            </li>
+                            @if(count($items) > 0)
+                                @foreach($items as $item)
+                                    <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
+                                        {{ $item->name }}
+                                        @php $total += $item->price; @endphp 
+                                        <span class="badge bg-dark">${{ $item->price }}</span>
+                                    </li>
+                                @endforeach
+                                <input type="hidden" name="order_total" id="subtotal" value="{{ $subtotal }}">
+                            @endif
                         </ul>
                         <div class="list-group-item d-flex justify-content-between align-items-center my-1">
                             <strong>Shipping Fee</strong>
@@ -76,8 +74,7 @@
                         </div>
                         <div class="list-group-item d-flex justify-content-between align-items-center my-1">
                             <strong>Subtotal</strong>
-                            <span class="fw-bold">$45.00</span>
-                            <input type="hidden" name="order_total" value="1">
+                            <span class="fw-bold" id="order_total"></span>
                         </div>
                         <div class="mt-4">
                             <button class="btn btn-dark w-100" type="submit">

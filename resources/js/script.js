@@ -14,4 +14,7 @@ $(document).ready(function() {
             $('#quantity-value').val(quantity); 
         }
     });
+
+    let subtotal = parseInt($('#subtotal').val());
+    $('#order_total').text('$' + subtotal);
 });
