@@ -30,7 +30,7 @@
                         <div class="d-flex my-3">
                             <button type="button" class="btn btn-dark" id="add">+</button>
                             <span class="quantity-display" id="quantity">1</span>
-                            <input type="hidden" value="" id="quantity-value" name="quantity">
+                            <input type="hidden" value="1" id="quantity-value" name="quantity">
                             <button type="button" class="btn btn-dark" id="subtract">-</button>
                         </div>
                         <h6>Variation</h6>

@@ -4,6 +4,7 @@ $(document).ready(function() {
         quantity += 1; 
         $("#quantity").text(quantity);
         $('#quantity-value').val(quantity); 
+        console.log(quantity);
     });
 
     $('#subtract').click(function(){

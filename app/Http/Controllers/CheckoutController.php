@@ -24,11 +24,11 @@ class CheckoutController extends Controller
     {   
         $getCartItems = Cart::all();
         $fixedShippingFee = 7; //temporarily static
-        $fixedVatFee = 1.90; //temporarily static
+        $fixedVatFee = 1; //temporarily static
         $total = 0;
     
         foreach ($getCartItems as $item) {
-            $total += $item->price;
+            $total += $item->price * $item->quantity;
         }
     
         $subtotal = $total + $fixedShippingFee + $fixedVatFee;

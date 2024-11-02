@@ -56,12 +56,18 @@
                             @if(count($items) > 0)
                                 @foreach($items as $item)
                                     <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
-                                        {{ $item->name }}
+                                        <div>
+                                            {{ $item->name }}
+                                            <span class="d-block" style="font-size: 13px !important; font-weight: bold">Quantity: {{ $item->quantity }}</span>
+                                        </div> 
                                         @php $total += $item->price; @endphp 
                                         <span class="badge bg-dark">${{ $item->price }}</span>
                                     </li>
                                 @endforeach
-                                <input type="hidden" name="order_total" id="subtotal" value="{{ $subtotal }}">
+                                @else 
+                                <p class="text-center">
+                                    No products added
+                                </p>
                             @endif
                         </ul>
                         <div class="list-group-item d-flex justify-content-between align-items-center my-1">
@@ -70,11 +76,12 @@
                         </div>
                         <div class="list-group-item d-flex justify-content-between align-items-center my-1">
                             <strong>VAT</strong>
-                            <span class="fw-bold">$1.90</span>
+                            <span class="fw-bold">$1.00</span>
                         </div>
                         <div class="list-group-item d-flex justify-content-between align-items-center my-1">
                             <strong>Subtotal</strong>
                             <span class="fw-bold" id="order_total"></span>
+                            <input type="hidden" name="order_total" id="subtotal" value="{{ $subtotal }}">
                         </div>
                         <div class="mt-4">
                             <button class="btn btn-dark w-100" type="submit">
@@ -85,7 +92,7 @@
                         <div class="mt-2 mb-4">
                             <a href="/" class="btn btn-dark w-100" type="button">
                                 <i class="fas fa-angle-left me-2"></i> 
-                                Cancel
+                                Shop More
                             </a>
                         </div>
                     </div>
