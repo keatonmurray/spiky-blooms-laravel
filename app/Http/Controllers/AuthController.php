@@ -33,8 +33,9 @@ class AuthController extends Controller
         return redirect('/');
     }
 
-    public function show()
+    public function show(string $id)
     {
-        //user login logic here
+        $getUser = User::find($id);
+        //return the blade view with the $getUser
     }
 }
