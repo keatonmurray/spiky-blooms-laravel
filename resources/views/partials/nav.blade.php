@@ -12,7 +12,7 @@
                     <a class="nav-link" href="{{ route('collections') }}">Collections</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('cart') }}">Cart</a>
+                    <a class="nav-link" href="{{ route('checkout') }}">Cart</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/login">My Account</a>
