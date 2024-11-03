@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -29,13 +29,13 @@ class AuthController extends Controller
 
         $data['password'] = Hash::make($data['password']);
 
-        User::create($data);
+        Customer::create($data);
         return redirect('/');
     }
 
     public function show(string $id)
     {
-        $getUser = User::find($id);
+        $getUser = Customer::find($id);
         //return the blade view with the $getUser
     }
 }
