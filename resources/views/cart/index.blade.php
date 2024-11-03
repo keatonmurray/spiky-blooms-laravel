@@ -52,8 +52,8 @@
                 <div class="col-12 col-md-5">
                     <div class="cart-info card p-4 w-100" style="border-radius: 0 !important;">
                         <h5 class="my-4">Cart Info</h5>
-                        <ul class="list-group mb-3">
-                            @if(count($items) > 0)
+                        @if(count($items) > 0)
+                            <ul class="list-group mb-3">
                                 @foreach($items as $item)
                                     <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
                                         <div>
@@ -64,34 +64,34 @@
                                         <span class="badge bg-dark">${{ $item->price * $item->quantity }}</span>
                                     </li>
                                 @endforeach
-                                @else 
-                                <p class="text-center">
-                                    No products added
-                                </p>
-                            @endif
-                        </ul>
-                        <div class="list-group-item d-flex justify-content-between align-items-center my-1">
-                            <strong>Shipping Fee</strong>
-                            <span class="fw-bold">$7.00</span>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center my-1">
-                            <strong>VAT</strong>
-                            <span class="fw-bold">$1.00</span>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-between align-items-center my-1">
-                            <strong>Subtotal</strong>
-                            <span class="fw-bold" id="order_total"></span>
-                            <input type="hidden" name="order_total" id="subtotal" value="{{ $subtotal }}">
-                        </div>
-                        <div class="mt-4">
-                            <button class="btn btn-dark w-100" type="submit">
-                                <i class="fas fa-credit-card me-2"></i>
-                                Checkout 
-                            </button>
-                        </div>
+                            </ul>
+                            <div class="list-group-item d-flex justify-content-between align-items-center my-1">
+                                <strong>Shipping Fee</strong>
+                                <span class="fw-bold">$7.00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center my-1">
+                                <strong>VAT</strong>
+                                <span class="fw-bold">$1.00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center my-1">
+                                <strong>Subtotal</strong>
+                                <span class="fw-bold" id="order_total"></span>
+                                <input type="hidden" name="order_total" id="subtotal" value="{{ $subtotal }}">
+                            </div>
+                            <div class="mt-4">
+                                <button class="btn btn-dark w-100" type="submit">
+                                    <i class="fas fa-credit-card me-2"></i>
+                                    Checkout 
+                                </button>
+                            </div>
+                            @else 
+                            <p class="text-center">
+                                No products added
+                            </p>
+                        @endif
                         <div class="mt-2 mb-4">
                             <a href="/" class="btn btn-dark w-100" type="button">
-                                <i class="fas fa-angle-left me-2"></i> 
+                                <i class="fas fa-shopping-bag me-2"></i>
                                 Shop More
                             </a>
                         </div>
