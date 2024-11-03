@@ -1,5 +1,10 @@
 @media (max-width: 768px) {
 
+    .justify-content-start 
+    {
+        justify-content: center !important;
+    }
+
     #products img 
     {
         object-fit: cover; 

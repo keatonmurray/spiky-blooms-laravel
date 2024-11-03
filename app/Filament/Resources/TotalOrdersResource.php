@@ -43,12 +43,12 @@ class TotalOrdersResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                // Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                // Tables\Actions\BulkActionGroup::make([
+                //     Tables\Actions\DeleteBulkAction::make(),
+                // ]),
             ]);
     }
 
@@ -63,8 +63,8 @@ class TotalOrdersResource extends Resource
     {
         return [
             'index' => Pages\ListTotalOrders::route('/'),
-            'create' => Pages\CreateTotalOrders::route('/create'),
-            'edit' => Pages\EditTotalOrders::route('/{record}/edit'),
+            // 'create' => Pages\CreateTotalOrders::route('/create'),
+            // 'edit' => Pages\EditTotalOrders::route('/{record}/edit'),
         ];
     }
 }
