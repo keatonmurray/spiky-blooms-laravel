@@ -8,7 +8,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\AuthController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/show/{id}', [HomeController::class, 'show'])->name('collection');
+Route::get('/featured/{id}', [HomeController::class, 'show'])->name('featured');
 
 Route::get('/collections', [ProductsController::class, 'index'])->name('collections');
 Route::get('collection/{id}', [ProductsController::class, 'show'])->name('collection');

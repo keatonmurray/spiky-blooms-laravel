@@ -23,7 +23,7 @@
                     <div class="{{ $id }} col-12 col-md-3">
                         <div class="product-img-container text-center d-flex flex-column align-items-center"> 
                             <figure class="img-container">
-                                <a href="{{ route('collection', ['id' => $product->id]) }}"> 
+                                <a href="{{ route('featured', ['id' => $product->id]) }}"> 
                                     @if (is_array($product->image) && count($product->image) > 0)
                                             <img src="{{ asset('storage/' . $product->image[0]) }}" alt="{{ $product->name }}" class="img-fluid"> 
                                     @elseif (!empty($product->image)) 
