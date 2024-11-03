@@ -60,8 +60,8 @@
                                             {{ $item->name }}
                                             <span class="d-block" style="font-size: 13px !important; font-weight: bold">Quantity: {{ $item->quantity }}</span>
                                         </div> 
-                                        @php $total += $item->price; @endphp 
-                                        <span class="badge bg-dark">${{ $item->price }}</span>
+                                        {{-- @php $total += $item->price; @endphp  --}}
+                                        <span class="badge bg-dark">${{ $item->price * $item->quantity }}</span>
                                     </li>
                                 @endforeach
                                 @else 

@@ -26,17 +26,18 @@ class CheckoutController extends Controller
         $fixedShippingFee = 7; //temporarily static
         $fixedVatFee = 1; //temporarily static
         $total = 0;
+        $singleItemPrice = 0;
     
         foreach ($getCartItems as $item) {
             $total += $item->price * $item->quantity;
         }
-    
+        
         $subtotal = $total + $fixedShippingFee + $fixedVatFee;
     
         $data = [
             'items' => $getCartItems,
             'subtotal' => $subtotal,
-            'total' => $total
+            'total' => $total,
         ];
     
         return view('cart.index')->with($data);
